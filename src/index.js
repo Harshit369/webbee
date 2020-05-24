@@ -6,6 +6,7 @@ import * as serviceWorker from "./serviceWorker";
 
 // Adding bootstrap style to the bundle
 import "bootstrap/dist/css/bootstrap.min.css";
+import "react-datepicker/dist/react-datepicker.css";
 
 ReactDOM.render(
   <React.StrictMode>

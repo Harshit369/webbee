@@ -3,6 +3,7 @@ import { Card, Form } from "react-bootstrap";
 import { connect } from "react-redux";
 import { actions } from "../../store/listing";
 import produce from "immer";
+import DatePicker from "react-datepicker";
 
 class ItemCard extends Component {
   updateFieldValue = (key, value) => {
@@ -38,6 +39,16 @@ class ItemCard extends Component {
           value={value}
           onChange={(e) => {
             update(e.target.value);
+          }}
+        />
+      );
+    }
+    if (type.key === "date") {
+      return (
+        <DatePicker
+          selected={value ? new Date(value) : new Date()}
+          onChange={(e) => {
+            update(e.toISOString().slice(0, 10));
           }}
         />
       );
@@ -90,7 +101,7 @@ class ItemCard extends Component {
           <Form>
             {fields.map(({ name, key, type }) => {
               return (
-                <Form.Group>
+                <Form.Group key={key}>
                   <Form.Label>{name}</Form.Label>
                   {this.getFieldInput(type, values[key], (value) => {
                     this.updateFieldValue(key, value);
