@@ -15,7 +15,6 @@ import hash from "../../utils/hash";
 
 class TypeCard extends Component {
   removeField = (index) => {
-    debugger;
     const { id, fields } = this.props;
     this.props.updateCard({
       id,
@@ -75,8 +74,6 @@ class TypeCard extends Component {
       updateCard,
     } = this.props;
 
-    debugger;
-
     return (
       <Card>
         <Card.Header
@@ -124,7 +121,6 @@ class TypeCard extends Component {
                 as="select"
                 value={titleField}
                 onChange={(e) => {
-                  debugger;
                   updateCard({
                     id,
                     update: {
@@ -215,8 +211,8 @@ const mapDispatchToProps = {
   updateCard: actions.updateType,
 };
 
-const mapStateToProps = (state, { index }) => {
-  return state.config.types[index];
+const mapStateToProps = (state, { id }) => {
+  return state.config.types.find((card) => card.id === id);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(TypeCard);

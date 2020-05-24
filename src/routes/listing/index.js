@@ -35,12 +35,12 @@ class Listing extends Component {
 
     return (
       <Wrapper>
-        {items.map(({ id, typeId }, index) => {
+        {items.map(({ id, typeId }) => {
           return (
             <div key={id}>
               <ItemCard
                 key={id}
-                index={index}
+                id={id}
                 type={types.find((type) => type.id === typeId)}
               />
             </div>

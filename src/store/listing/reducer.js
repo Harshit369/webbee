@@ -5,7 +5,6 @@ import produce from "immer";
 const reducer = handleActions(
   {
     [actions.addItem]: (state, action) => {
-      debugger;
       return { ...state, list: state.list.concat(action.payload) };
     },
     [actions.removeItem]: (state, { payload }) => {

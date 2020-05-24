@@ -28,7 +28,7 @@ class Config extends Component {
         {types.map((card, index) => {
           return (
             <div key={card.id}>
-              <TypeCard index={index} />
+              <TypeCard id={card.id} />
             </div>
           );
         })}

@@ -20,7 +20,6 @@ const reducer = handleActions(
       });
     },
     [actions.updateType]: (state, { payload: { id, update = {} } }) => {
-      debugger;
       const cardIndex = state.types.findIndex((card) => card.id === id);
       if (cardIndex < 0) {
         return state;

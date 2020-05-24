@@ -110,8 +110,8 @@ const mapDispatchToProps = {
   updateCard: actions.updateItem,
 };
 
-const mapStateToProps = (state, { index }) => {
-  return state.listing.list[index];
+const mapStateToProps = (state, { id }) => {
+  return state.listing.list.find((card) => card.id === id);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ItemCard);
