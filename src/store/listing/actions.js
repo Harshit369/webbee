@@ -1,4 +1,5 @@
 import { createActions } from "redux-actions";
+import hash from "../../utils/hash";
 
 export const namespaceOptions = {
   prefix: "LISTING",
@@ -6,8 +7,15 @@ export const namespaceOptions = {
 
 const actions = createActions(
   {
-    addItem: (payload) => payload,
+    addItem: ({ id }) => {
+      return {
+        id: hash(),
+        typeId: id,
+        values: {},
+      };
+    },
     removeItem: (payload) => payload,
+    updateItem: (payload) => payload,
   },
   namespaceOptions
 );

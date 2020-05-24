@@ -1,4 +1,4 @@
-export default function hash(length = 16) {
+export default function hash(length = 24) {
   var result = "";
   var characters =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";

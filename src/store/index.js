@@ -1,10 +1,10 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 
 import { reducer as configReducer } from "./config";
-import { reducer as listReducer } from "./listing";
+import { reducer as listingReducer } from "./listing";
 
 const rootReducer = combineReducers({
-  list: listReducer,
+  listing: listingReducer,
   config: configReducer,
 });
 
